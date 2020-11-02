@@ -63,7 +63,7 @@ const BlogList = ({ allBlogs }) => {
           }
           .hero_image img {
             object-fit: cover;
-            object-position: 50% 50%;
+            object-position: left;
             opacity: 1;
             transition: opacity 0.3s ease;
             min-height: 100%;
@@ -100,7 +100,7 @@ const BlogList = ({ allBlogs }) => {
           p {
             max-width: 900px;
           }
-          @media (min-width: 768px) {
+          @media (min-width: 1768px) {
             li {
               min-height: 250px;
               height: 33.333vh;

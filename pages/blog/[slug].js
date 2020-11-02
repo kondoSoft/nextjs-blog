@@ -55,7 +55,7 @@ export default function BlogTemplate({ frontmatter, markdownBody, siteTitle }) {
             object-fit: cover;
             min-height: 100%;
             min-width: 100%;
-            object-position: center;
+            object-position: left;
           }
 
           .blog__info {

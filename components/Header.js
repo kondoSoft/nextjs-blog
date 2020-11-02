@@ -12,13 +12,9 @@ export default function Header(props) {
           <h1>{props.siteTitle}</h1>
         </Link>
         <div>
-          <Link href={`${typeof window !== "undefined" &&
-          window.location.pathname == "/info" ?
-          "/" : "/info"}`}>
-            <h1>{`${typeof window !== "undefined" &&
-          window.location.pathname == "/info" ?
-          "close" : "info"}`}</h1>
-          </Link>
+          <a href='https://kondosoft.com'>
+            <h1>Main site</h1>
+          </a>
         </div>
       </nav>
       <style jsx>
@@ -37,7 +33,7 @@ export default function Header(props) {
             flex-direction: row;
             align-items: center;
           }
-          @media (min-width: 768px) {
+          @media (min-width: 1768px) {
             .header {
               height: 100vh;
               position: fixed;

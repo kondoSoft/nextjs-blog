@@ -33,7 +33,7 @@ export default function Layout(props) {
         .content {
           flex-grow: 1;
         }
-        @media (min-width: 768px) {
+        @media (min-width: 1768px) {
           .layout {
             display: block;
           }
