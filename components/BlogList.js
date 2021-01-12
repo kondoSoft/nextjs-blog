@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 
-const BlogList = ({ allBlogs }) => {
+const BlogList = (props) => {
+  const {allBlogs} = props
   function truncateSummary(content) {
     return content.slice(0, 200).trimEnd()
   }
@@ -13,8 +14,9 @@ const BlogList = ({ allBlogs }) => {
 
   return (
     <>
+    {console.log('>> ', props )}
       <ul className="list">
-        {allBlogs.length > 1 &&
+        {allBlogs.length >= 1 &&
           allBlogs.map(post => (
             <Link key={post.slug} href={{ pathname: `/blog/${post.slug}` }}>
               <a>
@@ -22,7 +24,7 @@ const BlogList = ({ allBlogs }) => {
                   <div className="hero_image">
                     <img
                       src={post.frontmatter.hero_image}
-                      alt={post.frontmatter.hero_image}
+                      alt={post.slug}
                     />
                   </div>
                   <div className="blog__info">
