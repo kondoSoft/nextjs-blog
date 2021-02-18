@@ -13,7 +13,7 @@ export default function Header(props) {
         </Link>
         <div>
           <a href='https://kondosoft.com'>
-            <h1>Main site</h1>
+            <h1>Kondo Soft</h1>
           </a>
         </div>
       </nav>

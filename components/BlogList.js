@@ -14,7 +14,6 @@ const BlogList = (props) => {
 
   return (
     <>
-    {console.log('>> ', props )}
       <ul className="list">
         {allBlogs.length >= 1 &&
           allBlogs.map(post => (

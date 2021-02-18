@@ -1,11 +1,13 @@
 import * as React from 'react'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
+import Head from '../../components/Meta'
 const glob = require('glob')
 
 import Layout from '../../components/Layout'
 
-export default function BlogTemplate({ frontmatter, markdownBody, siteTitle }) {
+export default function BlogTemplate(props) {
+  const { frontmatter, markdownBody, siteTitle } = props
   function reformatDate(fullDate) {
     const date = new Date(fullDate)
     return date.toDateString().slice(4)
@@ -17,10 +19,14 @@ export default function BlogTemplate({ frontmatter, markdownBody, siteTitle }) {
    ** are undefined — could be a Next bug?
    */
 
-  if (!frontmatter) return <></>
+  if (!frontmatter) return <div></div>
 
   return (
-    <Layout siteTitle={siteTitle}>
+    <Layout siteTitle={`${siteTitle}`}>
+    <Head
+      siteTitle = {frontmatter.title}
+      description = {frontmatter.hook_text || ''}
+    />
       <article className="blog">
         <figure className="blog__hero">
           <img
@@ -35,7 +41,7 @@ export default function BlogTemplate({ frontmatter, markdownBody, siteTitle }) {
         <div className="blog__body">
           <ReactMarkdown source={markdownBody} />
         </div>
-        <h2 className="blog__footer">Written By: {frontmatter.author}</h2>
+        <h2 className="blog__footer">Escrito por: {frontmatter.author}</h2>
       </article>
       <style jsx>
         {`
