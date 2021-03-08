@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import BlogList from '../components/BlogList'
 
 const Index = props => {
+  const orderedPosts = props.allBlogs.sort((a, b) => b.frontmatter.pos - a.frontmatter.pos )
   return (
     <Layout
       pathname="/"

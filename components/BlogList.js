@@ -3,6 +3,8 @@ import ReactMarkdown from 'react-markdown'
 
 const BlogList = (props) => {
   const {allBlogs} = props
+
+  console.log('allBlogs ', allBlogs)
   function truncateSummary(content) {
     return content.slice(0, 200).trimEnd()
   }

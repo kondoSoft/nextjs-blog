@@ -10,13 +10,17 @@ class MyDocument extends Document {
 
   render() {
     const GA_MEASUREMENT_ID = 'G-KSGTWEQEH9'; // Paste your GTAG here
+    const isLocal = process.env.NODE_ENV === 'development'
     return (
       <Html lang="en">
         <Head>
+        { !isLocal &&
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           />
+        }
+        { !isLocal &&
           <script
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
@@ -30,6 +34,7 @@ class MyDocument extends Document {
               `,
             }}
           />
+        }
         </Head>
         <body>
           <Main />

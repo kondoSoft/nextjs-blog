@@ -3,6 +3,7 @@ title: Lady Rosca, modelo a seguir?
 author: Dr Kondo (Carlos González)
 date: '2021-01-10T12:00:00.000Z'
 lang: es
+pos: 1
 hero_image: ../static/10012021/lady-rosca.png
 ---
 
