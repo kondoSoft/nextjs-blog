@@ -20,11 +20,13 @@ Podemos lograr lo anterior de varias maneras, pero una de las más comunes es us
 Como en toda relación la comunicación es básica, asi que para poder hacer uso de un API necesitamos reglas, para esto gente con más experiencia que nosotros ha hecho ya un conjunto de ellas a las que llamamos arquitecturas, entre las que se usan con mayor incidencia estan SOAP y REST, esta ultima es la que explico ya que es la que tiene mas usuarios y a mi parecer se puede usar en la mayoria de los casos.
 
 
-Entonces un API es "algo" que nos permite interactuar con un servidor, a traves de un cliente. Se que se escucha muy simple pero asi es, un cliente puede ser tu computadora, un navegador web, un telefono, un refrigerador etc. Y todo esto sucede siguiendo un conjunto de reglas que a las que les llamamos arquitectura, en nuestro casi REST
+Entonces un API es "algo" que nos permite interactuar con un servidor, a traves de un cliente. Se que se escucha muy simple pero asi es, un cliente puede ser tu computadora, un navegador web, un telefono, un refrigerador etc. Y todo esto sucede siguiendo un conjunto de reglas que a las que les llamamos arquitectura, en nuestro caso REST
 
 ![diagrama restful api](../static/031221/restful-api-diagram.png)
 
 # Que es REST?
+
+Por sus siglas en ingles Representational State Transfer.
 
 Como dije antes, un conjunto de reglas que nos ayudaran a tener un orden mientras interactuamos con un servidor a traves de el protocolo *http*, estas reglas se basan en las siguientes premisas.
 

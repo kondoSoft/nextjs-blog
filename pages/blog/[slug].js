@@ -2,6 +2,9 @@ import * as React from 'react'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 import Head from '../../components/Meta'
+import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 const glob = require('glob')
 
 import Layout from '../../components/Layout'
@@ -41,6 +44,7 @@ export default function BlogTemplate(props) {
         <div className="blog__body">
           <ReactMarkdown source={markdownBody} />
         </div>
+        <FontAwesomeIcon icon="check-square" />
         <h2 className="blog__footer">Escrito por: {frontmatter.author}</h2>
       </article>
       <style jsx>
