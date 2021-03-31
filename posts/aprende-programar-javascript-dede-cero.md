@@ -21,11 +21,11 @@ Lo mismo pasa con el uso de las computadoras, si te pido que sumes 2+2, segurame
 
 ## Requisitos
 
-Para poder seguir este curso necesitas tener ya instalado node en tu computadora, si estas usando linux o Mac Os, te recomiendo ver [el video](https:yt) dond explico como instalar y usar nvm.
+Para poder seguir este curso necesitas tener ya instalado node en tu computadora, si estas usando linux o Mac Os, te recomiendo ver [el video](https:yt) donde explico como instalar y usar nvm.
 
 Tambien necesitaras un editor de texto, yo recominendo Vim, o Sublime text, pero cualquier editor te servira.
 
-Por ultimo deberas estar comodo usando la terminal en tu computadore, si aun no sientes demasiada seguridad usando la terminal, te recomiendo la serie [Dominal la terminal](https://).
+Por ultimo deberas estar comodo usando la terminal en tu computadora, si aun no sientes demasiada seguridad usando la terminal, te recomiendo la serie [Domina la terminal](https://).
 
 ## REPL
 
