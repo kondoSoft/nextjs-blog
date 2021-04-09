@@ -72,4 +72,4 @@ El proceso es facil, te dejo una lista de cosas que debes hacer para facilitarte
 - Se conciente de tus sentimientos
 - Toma un descanzo si lo necesitas
 - Hagan una sesion de [retroalimentacion o feedbak](https://blog.kondosoft.com/retroalimentacion-feedback-ask)
-- Mantengan una mentalidad flexible, y acepten la confision
+- Mantengan una mentalidad flexible, y acepten la confusion
