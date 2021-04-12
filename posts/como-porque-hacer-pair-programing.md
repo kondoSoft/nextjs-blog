@@ -29,11 +29,9 @@ La herramienta por excelencia para los desarrolladores Sr. es el pair programing
 
 También los desarrolladores en entrenamiento se ven beneficiados con este ejercicio, y es que en términos de conocimiento, la práctica hace al maestro, además de que desarrollar con el soporte de un desarrollador con más experiencia brinda una sensación de confianza.
 
-Por último, en KondoSoft usualmente hacemos desarrollo en pares entre dos desarrolladores en entrenamiento, con 
-<!-- creo que la plabra dos de desarrollladores esta edundando  -->resultados magníficos, el crecimiento cognitivo es notable, además que hay un elemento lúdico en el proceso, y el hecho de compartir la misma afición por el desarrollo, así como estar en un nivel de conocimiento similar es magnífico para aumentar conocimiento.
+Por último, en KondoSoft usualmente hacemos desarrollo en pares entre desarrolladores en entrenamiento, con resultados magníficos, el crecimiento cognitivo es notable, además que hay un elemento lúdico en el proceso, y el hecho de compartir la misma afición por el desarrollo, así como estar en un nivel de conocimiento similar es magnífico para aumentar conocimiento.
 
 Como nota te puedo decir que cuando se hace pair programing entre dos desarrolladores en entrenamiento es importante cambiar los equipos constantemente.
-<!-- creo que la plabra dos de desarrollladores esta edundando  -->
 
 ## Aumenta la creatividad.
 Al explorar opciones diferentes desde un punto de vista ajeno al tuyo es una gran herramienta para explorar nuevas ideas, desde en un ámbito de desarrollo en sí, como en el desarrollo del producto. Es decir, se ve beneficiada la lógica, así como el uso del lenguaje mismo, explorando nuevas maneras de implementar las herramientas que el lenguaje mismo brinda, así como el framework.
