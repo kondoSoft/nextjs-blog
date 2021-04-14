@@ -4,13 +4,14 @@ import ReactMarkdown from 'react-markdown'
 import Head from '../../components/Meta'
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import Comment from '../../components/commentsBox/CommentsBox.js'
 const glob = require('glob')
 
 import Layout from '../../components/Layout'
 
 export default function BlogTemplate(props) {
   const { frontmatter, markdownBody, siteTitle } = props
+  const posNumber = props.frontmatter.pos
   function reformatDate(fullDate) {
     const date = new Date(fullDate)
     return date.toDateString().slice(4)
@@ -21,7 +22,6 @@ export default function BlogTemplate(props) {
    ** It seems like on first go the props
    ** are undefined — could be a Next bug?
    */
-
   if (!frontmatter) return <div></div>
 
   return (
@@ -47,6 +47,7 @@ export default function BlogTemplate(props) {
         <FontAwesomeIcon icon="check-square" />
         <h2 className="blog__footer">Escrito por: {frontmatter.author}</h2>
       </article>
+      <Comment idNumber={posNumber} />
       <style jsx>
         {`
           .blog h1 {
@@ -187,7 +188,6 @@ export async function getStaticProps({ ...ctx }) {
   const content = await import(`../../posts/${slug}.md`)
   const config = await import(`../../data/config.json`)
   const data = matter(content.default)
-
   return {
     props: {
       siteTitle: config.title,
@@ -196,7 +196,6 @@ export async function getStaticProps({ ...ctx }) {
     },
   }
 }
-
 export async function getStaticPaths() {
   //get all .md files in the posts dir
   const blogs = glob.sync('posts/**/*.md')
