@@ -2,46 +2,50 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from './styles.module.css'
 
-export default function Button ({idNumber}) {
+export default function Button ({ idNumber }) {
   const [comments, setComments] = useState([])
   const [data, setData] = useState({
     name: '',
     comments: ''
   })
+  axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
+  function getData () {
+    axios.get('/posts', {
+      responseType: 'json'
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          setComments(res.data)
+          console.log('data', res.data)
+        }
+      }).catch((err) => {
+        console.log(err)
+      })
+  }
+  useEffect(() => {
+    getData()
+  }, [])
   const handleChange = (e) => {
     setData({
       ...data,
       [e.target.name]: [e.target.value]
     })
-    console.log(data)
   }
-  useEffect(() => {
-  //get data from api
-    axios.get('https://jsonplaceholder.typicode.com/comments', {
-      responseType: 'json'
-    })
-      .then(function (res) {
-        if (res.status == 200) {
-          setComments(res.data)
-        }
-      }).catch(function (err) {
-        console.log(err)
-      })
-  })
   function post () {
-    axios.post('https://jsonplaceholder.typicode.com/comments', {
-      data: {
+    axios.post('/posts', {
+      info: {
         userId: 1,
         title: 'Esto es un post nuevo',
-        body: 'cuerpo de este post. Me gusta la librería Axios!!'
+        body: data.comments
       }
     })
-      .then(function (res) {
-        if (res.status ==201) {
-          console.log('El nuevo Post ha sido almacenado con id: ')
+      .then((res) => {
+        if (res.status === 201) {
+          getData()
+          console.log('El nuevo Post ha sido almacenado con id: ', res.data.info.body.toString() )
         }
       })
-      .catch(function (err) {
+      .catch((err) => {
         console.log(err)
       })
   }
