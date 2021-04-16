@@ -24,8 +24,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-markdown": "^4.3.1",
-    "webpack": "^4.42.1",
-    "yarn": "^1.22.10"
+    "webpack": "^4.42.1"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
