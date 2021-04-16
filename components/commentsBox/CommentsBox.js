@@ -30,8 +30,8 @@ export default function Button ({ idNumber }) {
       }
     })
       .then((res) => {
+        setComments([...comments, { body: data.comment }])
         if (res.status === 201) {
-          getData()
         }
       })
       .catch((err) => {
@@ -52,7 +52,7 @@ export default function Button ({ idNumber }) {
     <div className={styles.container}>
       <forms className={styles.form}>
         <textarea className={styles.comments}
-        rows='4' placeholder='comentarios' name='comments'
+        rows='4' placeholder='comentarios' name='comment'
         onChange={handleChange}>
         </textarea>
         <div className={styles.containerButton}>
