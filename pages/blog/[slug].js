@@ -4,14 +4,14 @@ import ReactMarkdown from 'react-markdown'
 import Head from '../../components/Meta'
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Comment from '../../components/commentsBox/CommentsBox.js'
+import CommentBox from '../../components/commentsBox/CommentsBox.js'
 const glob = require('glob')
 
 import Layout from '../../components/Layout'
 
 export default function BlogTemplate(props) {
   const { frontmatter, markdownBody, siteTitle } = props
-  const posNumber = props.frontmatter.pos
+  const posId = props.frontmatter.pos
   function reformatDate(fullDate) {
     const date = new Date(fullDate)
     return date.toDateString().slice(4)
@@ -47,7 +47,7 @@ export default function BlogTemplate(props) {
         <FontAwesomeIcon icon="check-square" />
         <h2 className="blog__footer">Escrito por: {frontmatter.author}</h2>
       </article>
-      <Comment idNumber={posNumber} />
+      <CommentBox idNumber={posId} />
       <style jsx>
         {`
           .blog h1 {

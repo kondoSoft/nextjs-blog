@@ -13,7 +13,8 @@
 }
 .button {
 	width: 150px;
-	height: 30px
+	height: 30px;
+	font-size: 16px;
 }
 .containerButton{
 	display: flex;
