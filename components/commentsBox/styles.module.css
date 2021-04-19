@@ -8,13 +8,22 @@
 .form {
 	width: 100%
 }
+.line {
+	margin-top: 20px;
+	border-top: #cccccc solid 1px;
+	width: 100%;
+}
 .comments {
 	width: 100%;
+	border: #cccccc solid 1px;
+	font-family: "Work Sans","Helvetica Neue",Helvetica,sans-serif;
+	font-size: 16px;
 }
 .button {
 	width: 150px;
 	height: 30px;
 	font-size: 16px;
+	font-family: "Work Sans","Helvetica Neue",Helvetica,sans-serif;
 }
 .containerButton{
 	display: flex;
@@ -24,6 +33,4 @@
 }
 .commentsContainer {
 	margin: 20px 0; 
-	border: black solid .5px;
-	width: 100%;
 }
