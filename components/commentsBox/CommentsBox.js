@@ -23,6 +23,8 @@ export default function Button ({ idNumber }) {
       })
   }
   function post () {
+    setComments(prevComments =>[...prevComments, { body: data.comment }])
+     //setCount(prevCount => prevCount + 1); // 1
     axios.post('/comments', {
       info: {
         posId: idNumber,
@@ -30,11 +32,13 @@ export default function Button ({ idNumber }) {
       }
     })
       .then((res) => {
-        setComments([...comments, { body: data.comment }])
         if (res.status === 201) {
+        getData()
         }
       })
       .catch((err) => {
+        precomments => prevComments.pop()
+        setComments([...comments])
         window.alert('Ha ocurrido un error por favor volver a intentarlo')
       })
   }
@@ -47,7 +51,7 @@ export default function Button ({ idNumber }) {
   useEffect(() => {
     getData()
   }, [])
-
+ console.log(comments)
   return (
     <div className={styles.container}>
       <forms className={styles.form}>
@@ -66,7 +70,7 @@ export default function Button ({ idNumber }) {
           <div key={item.id} className={styles.commentsContainer}>
             <p>{item.body}</p>
           </div>
-        ))
+        )).reverse()
       }
     </div>
   )
