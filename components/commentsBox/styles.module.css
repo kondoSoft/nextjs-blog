@@ -5,7 +5,7 @@
 	width: 60%;
 	margin: 0 20%;
 }
-.form {
+.size100 {
 	width: 100%
 }
 .line {
@@ -14,11 +14,17 @@
 	width: 100%;
 }
 .comments {
-	width: 100%;
 	border: #cccccc solid 1px;
 	font-family: "Work Sans","Helvetica Neue",Helvetica,sans-serif;
 	font-size: 16px;
 }
+.inputname {
+	margin-bottom: 20px;
+}
+.user {
+	font-weight: bold;
+}
+
 .button {
 	width: 150px;
 	height: 30px;
@@ -33,4 +39,6 @@
 }
 .commentsContainer {
 	margin: 20px 0; 
+	border: none;
+	width:100%;
 }
