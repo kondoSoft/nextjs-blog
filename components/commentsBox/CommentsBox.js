@@ -1,17 +1,14 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useForm } from 'react-hook-form'
 import styles from './styles.module.css'
 
 axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
 
 export default function Button ({ idNumber }) {
-  let booleanButton = true
-  const initialData = {
-    name: '',
-    comment: ''
-  }
+  const { register, handleSubmit, formState: { errors } } = useForm()
+  const onSubmit = (data, e) => { post(data), e.target.reset() }
   const [comments, setComments] = useState([])
-  const [data, setData] = useState(initialData)
   
   function getData () {
     axios.get('/comments', {
@@ -26,10 +23,7 @@ export default function Button ({ idNumber }) {
       })
   }
   
-  function post () {
-    document.getElementById('name').value = ''
-    document.getElementById('comment').value = ''
-    setData(initialData)
+  function post (data) {
     setComments(prevComments => [...prevComments, {
       name: data.name,
       body: data.comment
@@ -54,37 +48,32 @@ export default function Button ({ idNumber }) {
       })
   }
 
-  function handleChange (e) {
-    setData({
-      ...data,
-      [e.target.name]: [e.target.value]
-    })
-  }
-
-  booleanButton = data.comment === '' || data.name === ''
-  
   useEffect(() => {
     getData()
   }, [])
-console.log(initialData)
+
   return (
     <div className={styles.container}>
-      <forms className={styles.size100}>
-        <input id='name' className={styles.comments+ ' '+ styles.inputname}
-         placeholder='nombre' type='text' name='name' onChange={handleChange}/>
-        <textarea id='comment' className={styles.comments+' '+ styles.size100}
-        rows='4' placeholder='comentarios' name='comment'
-        onChange={handleChange}>
-        </textarea>
+      <form className={styles.size100} onSubmit={handleSubmit(onSubmit)}>
+        <input
+          className={styles.comments + ' ' + styles.inputname}
+          placeholder='nombre'
+          {...register('name', { required: true })}
+        />
+        {errors.name ? window.alert('introdusca su nombre') : null}
+        <textarea
+          className={styles.comments + ' ' + styles.size100}
+          rows='4' placeholder='comentarios'
+          {...register('comment', { required: true })}
+        />
+        {errors.name ? window.alert('introdusca su comentario') : null}
         <div className={styles.containerButton}>
-          <button className={styles.button} onClick={post} disabled={booleanButton}>
-            comentar
-          </button>
+          <input className={styles.button} type='submit' value='comentar' />
         </div>
-      </forms>
-      <spam className={styles.line}></spam>
+      </form>
+      <spam className={styles.line} />
       {
-        comments.map((item, index)=> (
+        comments.map((item, index) => (
           <div key={index} className={styles.commentsContainer + ' ' + styles.comments}>
             <p className={styles.user}>{item.name}</p>
             <p>{item.body}</p>
