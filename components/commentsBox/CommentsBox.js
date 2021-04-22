@@ -54,18 +54,22 @@ export default function Button ({ idNumber }) {
   return (
     <div className={styles.container}>
       <form className={styles.size100} onSubmit={handleSubmit(onSubmit)}>
-        <input
-          className={styles.comments + ' ' + styles.inputname}
-          placeholder='nombre'
-          {...register('name', { required: true })}
-        />
-        {errors.name ? window.alert('introdusca su nombre') : null}
-        <textarea
-          className={styles.comments + ' ' + styles.size100}
-          rows='4' placeholder='comentarios'
-          {...register('comment', { required: true })}
-        />
-        {errors.name ? window.alert('introdusca su comentario') : null}
+        <div className={styles.inputContainer}>
+          <input
+            className={errors.name ?  styles.inputname : styles.comments}
+            placeholder='nombre'
+            {...register('name', { required: true })}
+          />
+          {errors.name && <p className={styles.error}>introdusca su nombre</p>}
+        </div>
+        <div className={styles.inputContainer}>
+          <textarea
+            className={errors.comment ?  styles.inputname + ' ' + styles.size100 : styles.comments + ' ' + styles.size100 }
+            rows='4' placeholder='comentarios'
+            {...register('comment', { required: true })}
+          />
+          {errors.comment && <p className={styles.error}>introdusca su comentario</p>}
+        </div>
         <div className={styles.containerButton}>
           <input className={styles.button} type='submit' value='comentar' />
         </div>
