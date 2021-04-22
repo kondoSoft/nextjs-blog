@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useForm } from 'react-hook-form'
 import styles from './styles.module.css'
 
-axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
+axios.defaults.baseURL = 'https://ks-blog-backend-kondosoft-team.vercel.app/'
 
 export default function Button ({ idNumber }) {
   const { register, handleSubmit, formState: { errors } } = useForm()
@@ -11,7 +11,7 @@ export default function Button ({ idNumber }) {
   const [comments, setComments] = useState([])
   
   function getData () {
-    axios.get('/comments', {
+    axios.get(`/comments/${idNumber}`, {
       responseType: 'json'
     })
       .then((res) => {
@@ -30,11 +30,9 @@ export default function Button ({ idNumber }) {
     }
     ])
     axios.post('/comments', {
-      info: {
-        posId: idNumber,
-        name: data.name,
-        body: data.comment
-      }
+      post_id: idNumber,
+      name: data.name,
+      body: data.comment
     })
       .then((res) => {
         if (res.status === 201) {
@@ -42,6 +40,7 @@ export default function Button ({ idNumber }) {
         }
       })
       .catch((err) => {
+        console.log(err)
         prevComments => prevComments.pop()
         setComments([...comments])
         window.alert('Ha ocurrido un error por favor volver a intentarlo')
