@@ -60,7 +60,7 @@ export default function Button ({ idNumber }) {
             placeholder='nombre'
             {...register('name', { required: true })}
           />
-          {errors.name && <p className={styles.error}>introdusca su nombre</p>}
+          {errors.name && <span className={styles.error}>introdusca su nombre</span>}
         </div>
         <div className={styles.inputContainer}>
           <textarea
@@ -68,13 +68,13 @@ export default function Button ({ idNumber }) {
             rows='4' placeholder='comentarios'
             {...register('comment', { required: true })}
           />
-          {errors.comment && <p className={styles.error}>introdusca su comentario</p>}
+          {errors.comment && <span className={styles.error}>introdusca su comentario</span>}
         </div>
         <div className={styles.containerButton}>
           <input className={styles.button} type='submit' value='comentar' />
         </div>
       </form>
-      <spam className={styles.line} />
+      <div className={styles.line} />
       {
         comments.map((item, index) => (
           <div key={index} className={styles.commentsContainer + ' ' + styles.comments}>
