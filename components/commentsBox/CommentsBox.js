@@ -47,7 +47,7 @@ export default function Button ({ idNumber }) {
       })
   }
 
-  useEffect(() => {
+   useEffect(() => {
     getData()
   }, [])
 
@@ -55,26 +55,26 @@ export default function Button ({ idNumber }) {
     <div className={styles.container}>
       <form className={styles.size100} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputContainer}>
+          <textarea
+            className={errors.comment ? styles.inputname + ' ' + styles.size100 : styles.comments + ' ' + styles.size100 }
+            rows='4' placeholder='comentarios'
+            {...register('comment', { required: true })}  
+          />
+          {errors.comment && <span className={styles.error + ' ' + styles.errorTexArea}>introduzca su comentario</span>}
+        </div>
+        <div className={styles.inputContainer}>
           <input
             className={errors.name ?  styles.inputname : styles.comments}
             placeholder='nombre'
             {...register('name', { required: true })}
           />
-          {errors.name && <p className={styles.error}>introdusca su nombre</p>}
-        </div>
-        <div className={styles.inputContainer}>
-          <textarea
-            className={errors.comment ?  styles.inputname + ' ' + styles.size100 : styles.comments + ' ' + styles.size100 }
-            rows='4' placeholder='comentarios'
-            {...register('comment', { required: true })}
-          />
-          {errors.comment && <p className={styles.error}>introdusca su comentario</p>}
+          {errors.name && <span className={styles.error}>introduzca su nombre</span>}
         </div>
         <div className={styles.containerButton}>
           <input className={styles.button} type='submit' value='comentar' />
         </div>
       </form>
-      <spam className={styles.line} />
+      <div className={styles.line} />
       {
         comments.map((item, index) => (
           <div key={index} className={styles.commentsContainer + ' ' + styles.comments}>
