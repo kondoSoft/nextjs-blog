@@ -60,15 +60,15 @@ export default function Button ({ idNumber }) {
             placeholder='nombre'
             {...register('name', { required: true })}
           />
-          {errors.name && <span className={styles.error}>introdusca su nombre</span>}
+          {errors.name && <span className={styles.error}>introduzca su nombre</span>}
         </div>
         <div className={styles.inputContainer}>
           <textarea
-            className={errors.comment ?  styles.inputname + ' ' + styles.size100 : styles.comments + ' ' + styles.size100 }
+            className={errors.comment ? styles.inputname + ' ' + styles.size100 : styles.comments + ' ' + styles.size100 }
             rows='4' placeholder='comentarios'
             {...register('comment', { required: true })}
           />
-          {errors.comment && <span className={styles.error}>introdusca su comentario</span>}
+          {errors.comment && <span className={styles.error + ' ' + styles.errorTexArea}>introduzca su comentario</span>}
         </div>
         <div className={styles.containerButton}>
           <input className={styles.button} type='submit' value='comentar' />

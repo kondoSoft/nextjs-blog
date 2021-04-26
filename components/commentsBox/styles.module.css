@@ -1,7 +1,12 @@
 .error {
-   color: red;
-   font-family: "Work Sans","Helvetica Neue",Helvetica,sans-serif;
-   font-size: 14px;
+	display: block;
+	color: red;
+	font-family: "Work Sans","Helvetica Neue",Helvetica,sans-serif;
+	font-size: 14px;
+	padding-left: 4px;
+}
+.errorTexArea {
+	margin: -3px;
 }
 .container {
 	display: flex;
@@ -22,11 +27,13 @@
 	border: #cccccc solid 1px;
 	font-family: "Work Sans","Helvetica Neue",Helvetica,sans-serif;
 	font-size: 16px;
+	padding: 4px 2px;
 }
 .inputname {
 	border: red solid 1px;
 	font-family: "Work Sans","Helvetica Neue",Helvetica,sans-serif;
 	font-size: 16px;
+	padding: 4px 2px;
 }
 .inputContainer {
 	margin-bottom: 20px;
