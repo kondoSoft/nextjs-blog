@@ -2,12 +2,22 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useForm } from 'react-hook-form'
 import styles from './styles.module.css'
+import { Element, scroller } from 'react-scroll'
 
 axios.defaults.baseURL = 'https://ks-blog-backend-kondosoft-team.vercel.app/'
 
 export default function Button ({ idNumber }) {
   const { register, handleSubmit, formState: { errors } } = useForm()
-  const onSubmit = (data, e) => { post(data), e.target.reset() }
+  const onSubmit = (data, e) => {
+    post(data)
+    e.target.reset()
+    scroller.scrollTo('scroll-line', {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+      offset: -200
+    })
+  }
   const [comments, setComments] = useState([])
   
   function getData () {
@@ -47,7 +57,7 @@ export default function Button ({ idNumber }) {
       })
   }
 
-   useEffect(() => {
+  useEffect(() => {
     getData()
   }, [])
 
@@ -56,15 +66,15 @@ export default function Button ({ idNumber }) {
       <form className={styles.size100} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputContainer}>
           <textarea
-            className={errors.comment ? styles.inputname + ' ' + styles.size100 : styles.comments + ' ' + styles.size100 }
+            className={errors.comment ? styles.inputname + ' ' + styles.size100 : styles.comments + ' ' + styles.size100}
             rows='4' placeholder='comentarios'
-            {...register('comment', { required: true })}  
+            {...register('comment', { required: true })}
           />
           {errors.comment && <span className={styles.error + ' ' + styles.errorTexArea}>introduzca su comentario</span>}
         </div>
         <div className={styles.inputContainer}>
           <input
-            className={errors.name ?  styles.inputname : styles.comments}
+            className={errors.name ? styles.inputname : styles.comments}
             placeholder='nombre'
             {...register('name', { required: true })}
           />
@@ -74,7 +84,7 @@ export default function Button ({ idNumber }) {
           <input className={styles.button} type='submit' value='comentar' />
         </div>
       </form>
-      <div className={styles.line} />
+      <Element name='scroll-line' className={styles.line} />
       {
         comments.map((item, index) => (
           <div key={index} className={styles.commentsContainer + ' ' + styles.comments}>
