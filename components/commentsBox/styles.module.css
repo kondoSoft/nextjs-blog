@@ -38,6 +38,10 @@
 .inputContainer {
 	margin-bottom: 20px;
 }
+
+.infoUser p {
+	margin: 0 !important;
+}
 .user {
 	font-weight: bold;
 }
@@ -57,4 +61,5 @@
 	margin: 20px 0; 
 	border: none;
 	width:100%;
+	display: flex;
 }

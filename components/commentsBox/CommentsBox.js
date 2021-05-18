@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form'
 import styles from './styles.module.css'
 import { Element, scroller } from 'react-scroll'
 
+import Avatar from '../../components/Avatar/index.js'
+
 axios.defaults.baseURL = 'https://ks-blog-backend-kondosoft-team.vercel.app/'
 
 export default function Button ({ idNumber }) {
@@ -88,8 +90,11 @@ export default function Button ({ idNumber }) {
       {
         comments.map((item, index) => (
           <div key={index} className={styles.commentsContainer + ' ' + styles.comments}>
-            <p className={styles.user}>{item.name}</p>
-            <p>{item.body}</p>
+            <Avatar initials={item.name}/>
+            <div className={styles.infoUser}>
+              <p className={styles.user}>{item.name}</p>
+              <p>{item.body}</p>
+            </div>
           </div>
         )).reverse()
       }
