@@ -40,14 +40,22 @@
 }
 
 .infoUser p {
-	margin: 0 !important;
+	margin: 0 0 calc( 31px / 3.2360) 0!important;
+
 }
 .infoUser  {
-  width: 100%;
   position: relative;
+   width: calc(100% - 83.902px);
 }
 .user {
 	font-weight: bold;
+  font-size: 15px;
+  line-height: 1;
+
+}
+.textComment{
+  font-size: 14px;
+  word-wrap: break-word;
 }
 .userComments {
   position: absolute;
@@ -66,60 +74,9 @@
 	width:100%;
 }
 .commentsContainer {
-	margin: 20px 0; 
+	margin: 10px 0; 
 	border: none;
 	width:100%;
 	display: flex;
+  align-items: flex-start;
 }
-
-
-
-
-
-
-
-.containere {
-  width: 250px;
-  height: calc(250px/ 1.618);
-  border: 0.5px solid #4A4949;
-  display: grid;
-  
-  grid-template-columns: 23.6% 5.58% 9.02% 61.8%;
-  grid-template-rows: 23.6% 5.58% 9.02% 61.8%;
-  grid-template-areas: 
-    "C D D A"
-    "C E E A"
-    "C E E A"
-    "B B B A"; 
-  
-}
-
-.item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  border: 0.5px solid #4A4949;
-  
-}
-  .a {
-  grid-area: A;
-  }
-  .b {
-  grid-area: B
-  }
-  .c {
-  grid-area: C;
-  }
-  .d {
-  grid-area: D;
-  }
-  .e {
-  grid-area: E;
-  font-size: 1.2em;
-  }
-  
- 
-

@@ -3,6 +3,7 @@
   	height: 50px; 
   	background: white;
   	border: black solid;
+  	margin-right: calc(50px / 1.6180)
 }
 .initilas{
 	text-align: center;

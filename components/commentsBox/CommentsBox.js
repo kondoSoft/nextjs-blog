@@ -88,23 +88,14 @@ export default function Button ({ idNumber }) {
       </form>
       <Element name='scroll-line' className={styles.line} />
       {
-        comments.map((item, index) => (
-          <div key={index} className={styles.commentsContainer + ' ' + styles.comments + ' ' + styles.containere}>
-            <div className={styles.item +' ' + styles.a}>
+       comments.map((item, index) => (
+          <div key={index} className={styles.commentsContainer + ' ' + styles.comments}>
+            <Avatar initials={item.name}/>
             <div className={styles.infoUser}>
               <p className={styles.user}>{item.name}</p>
-              <p className={styles.userComments}>{item.body}</p>
+              <p className={styles.textComment}>{item.body}</p>
             </div>
           </div>
-          <div className={styles.item+' ' + styles.b}></div>
-          <div className={styles.item+' ' + styles.c}>
-            <Avatar initials={item.name}/>
-          </div>
-          <div className={styles.item+' ' + styles.d}></div>
-          <div className={styles.item+' ' + styles.e}></div>
-          </div>
-
-
         )).reverse()
       }
     </div>

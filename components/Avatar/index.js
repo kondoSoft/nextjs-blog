@@ -19,7 +19,7 @@ export default function avatar({initials}) {
 
   return (
     <div className={styles.avatar}>
-    <p className={styles.initilas}>{a}</p>
+    	<p className={styles.initilas}>{a}</p>
     </div>
   )
 }
