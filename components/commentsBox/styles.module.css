@@ -42,10 +42,18 @@
 .infoUser p {
 	margin: 0 !important;
 }
+.infoUser  {
+  width: 100%;
+  position: relative;
+}
 .user {
 	font-weight: bold;
 }
-
+.userComments {
+  position: absolute;
+  top: 42px;
+  font-size: 14px;
+}
 .button {
 	width: 150px;
 	height: 30px;
@@ -63,3 +71,55 @@
 	width:100%;
 	display: flex;
 }
+
+
+
+
+
+
+
+.containere {
+  width: 250px;
+  height: calc(250px/ 1.618);
+  border: 0.5px solid #4A4949;
+  display: grid;
+  
+  grid-template-columns: 23.6% 5.58% 9.02% 61.8%;
+  grid-template-rows: 23.6% 5.58% 9.02% 61.8%;
+  grid-template-areas: 
+    "C D D A"
+    "C E E A"
+    "C E E A"
+    "B B B A"; 
+  
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0.5px solid #4A4949;
+  
+}
+  .a {
+  grid-area: A;
+  }
+  .b {
+  grid-area: B
+  }
+  .c {
+  grid-area: C;
+  }
+  .d {
+  grid-area: D;
+  }
+  .e {
+  grid-area: E;
+  font-size: 1.2em;
+  }
+  
+ 
+
